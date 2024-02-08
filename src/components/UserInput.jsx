@@ -1,15 +1,27 @@
 const UserInput = () => {
   return (
-    <div id='user-input'>
+    <section id='user-input'>
       <div className='input-group'>
-        <label htmlFor=''>Initial Investment</label>
-        <input type='text' value='' />
+        <p>
+          <label htmlFor=''>Initial Investment</label>
+          <input type='number' value='' required />
+        </p>
+        <p>
+          <label htmlFor=''>Annual Investment</label>
+          <input type='number' value='' required />
+        </p>
       </div>
       <div className='input-group'>
-        <label htmlFor=''>Initial Investment</label>
-        <input type='text' value='' />
+        <p>
+          <label htmlFor=''>Expected Return</label>
+          <input type='number' value='' required />
+        </p>
+        <p>
+          <label htmlFor=''>Duration</label>
+          <input type='number' value='' required />
+        </p>
       </div>
-    </div>
+    </section>
   );
 };
 
