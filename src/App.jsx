@@ -4,10 +4,10 @@ import UserInput from './components/UserInput';
 
 function App() {
   let [values, setValues] = useState({
-    initialInvestment: '',
-    annualInvestment: '',
-    expectedReturn: '',
-    duration: '',
+    initialInvestment: 10000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 10,
   });
 
   const handleChangeValues = (event) => {
