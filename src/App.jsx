@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import UserInput from './components/UserInput';
+import Results from './components/Results';
 
 function App() {
   let [values, setValues] = useState({
@@ -10,12 +11,14 @@ function App() {
     duration: 10,
   });
 
+  const inputIsValid = values.duration >= 1;
+
   const handleChangeValues = (event) => {
     let id = event.target.id;
     let value = event.target.value;
 
     setValues((prevValue) => {
-      let newValues = { ...prevValue, [id]: value };
+      let newValues = { ...prevValue, [id]: +value };
       return newValues;
     });
   };
@@ -24,6 +27,11 @@ function App() {
     <>
       <Header />
       <UserInput values={values} handleChangeValues={handleChangeValues} />
+      {inputIsValid ? (
+        <Results values={values} />
+      ) : (
+        <p className='center'>Please enter a duration greater than zero.</p>
+      )}
     </>
   );
 }
